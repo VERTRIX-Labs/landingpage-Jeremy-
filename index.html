@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS — Catálogo de personajes de anime</title>
+  <meta name="description" content="NEXUS: el catálogo de élite donde puedes descubrir y reclutar a los personajes más poderosos del anime. Fichas, poderes, niveles y rangos.">
+  <meta property="og:title" content="NEXUS — Recluta leyendas del anime">
+  <meta property="og:description" content="Shadow, Gojo, Levi, Makima y más. Explora fichas, poderes y niveles en el catálogo de élite.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b0812'/%3E%3Cpath d='M32 10 50 21v22L32 54 14 43V21z' fill='none' stroke='%238b5cf6' stroke-width='3'/%3E%3Cpath d='M32 22l9 6v10l-9 6-9-6V28z' fill='%2338e8ff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+  <!-- Fondo global -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand" aria-label="NEXUS, inicio">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none">
+            <path d="M20 3 34.7 11.5v17L20 37 5.3 28.5v-17L20 3Z" stroke="url(#lg)" stroke-width="1.6"/>
+            <path d="M20 12l6.9 4v8l-6.9 4-6.9-4v-8l6.9-4Z" fill="url(#lg2)"/>
+            <defs>
+              <linearGradient id="lg" x1="5" y1="3" x2="35" y2="37" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a78bfa"/><stop offset="1" stop-color="#38e8ff"/>
+              </linearGradient>
+              <linearGradient id="lg2" x1="13" y1="12" x2="27" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#a78bfa"/><stop offset="1" stop-color="#38e8ff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="brand-name">NEXUS<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#rangos">Rangos</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#catalogo" class="btn btn-sm btn-primary">Explorar catálogo</a>
+        <button class="nav-burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#rangos">Rangos</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#faq">FAQ</a>
+      <a href="#catalogo" class="btn btn-primary btn-block">Explorar catálogo</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">
+            <span class="pulse-dot"></span>
+            Colección limitada · Temporada 07
+          </div>
+
+          <h1 class="hero-title reveal">
+            Recluta a las<br>
+            <span class="grad-text">leyendas del anime</span>
+          </h1>
+
+          <p class="hero-sub reveal">
+            Fichas verificadas, poderes desglosados y niveles reales de combate.
+            Descubre a los personajes más fuertes de la ficción y añádelos a tu
+            colección antes de que se agoten.
+          </p>
+
+          <div class="hero-cta reveal">
+            <a href="#catalogo" class="btn btn-primary btn-lg">
+              Explorar catálogo
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#rangos" class="btn btn-ghost btn-lg">Ver sistema de rangos</a>
+          </div>
+
+          <dl class="hero-stats reveal">
+            <div class="stat">
+              <dt>Personajes</dt>
+              <dd><span class="count" data-count="7">0</span><span class="plus">+</span></dd>
+            </div>
+            <div class="stat">
+              <dt>Nivel máximo</dt>
+              <dd><span class="count" data-count="100">0</span></dd>
+            </div>
+            <div class="stat">
+              <dt>Poder combinado</dt>
+              <dd><span class="count" data-count="640">0</span><span class="plus">K</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-ring" aria-hidden="true"></div>
+          <div class="hero-card" data-tilt>
+            <div class="hero-card-top">
+              <span class="chip chip-gold">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.6 6.6L21 11l-6.4 2.4L12 20l-2.6-6.6L3 11l6.4-2.4L12 2Z"/></svg>
+                Rango S+
+              </span>
+              <span class="hero-lv">LV. <strong>99</strong></span>
+            </div>
+
+            <div class="hero-img-wrap">
+              <img src="assets/characters/shadow-hero.webp" alt="Retrato de Shadow, espadachín de The Eminence in Shadow" class="hero-img">
+              <div class="hero-img-fade" aria-hidden="true"></div>
+            </div>
+
+            <div class="hero-card-info">
+              <p class="hero-series">The Eminence in Shadow</p>
+              <h2 class="hero-name">Shadow</h2>
+              <p class="hero-role">DPS · Infiltración · Líder de Shadow Garden</p>
+              <div class="hero-bars">
+                <div class="bar-row"><span>Poder</span><div class="bar"><i style="--v:98%"></i></div><b>98</b></div>
+                <div class="bar-row"><span>Técnica</span><div class="bar"><i style="--v:100%"></i></div><b>100</b></div>
+                <div class="bar-row"><span>Magia</span><div class="bar"><i style="--v:99%"></i></div><b>99</b></div>
+              </div>
+            </div>
+
+            <div class="hero-float hero-float-price">
+              <span>Desde</span>
+              <strong>$12,400</strong>
+              <span class="hero-float-note">USD · demo</span>
+            </div>
+            <div class="hero-float hero-float-power">
+              <span class="mini-orb" aria-hidden="true"></span>
+              <div><strong>+640K</strong><span>poder base</span></div>
+            </div>
+          </div>
+          <div class="hero-verified" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5.5v6c0 5 3.4 8.6 8 10.5 4.6-1.9 8-5.5 8-10.5v-6L12 2Z" stroke="currentColor" stroke-width="1.6"/><path d="m8.5 12 2.4 2.4 4.6-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Ficha verificada
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-foot reveal">
+          <span>Explora por rareza</span>
+          <div class="hero-foot-tags">
+            <span class="tier-dot t-gold">S+</span>
+            <span class="tier-dot t-violet">S</span>
+            <span class="tier-dot t-cyan">A</span>
+          </div>
+          <a href="#catalogo" class="hero-scroll">Desliza para ver el catálogo <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Shadow</span><i>✦</i><span>Gojo Satoru</span><i>✦</i><span>Levi Ackerman</span><i>✦</i><span>Makima</span><i>✦</i><span>Sung Jin-Woo</span><i>✦</i><span>Rimuru Tempest</span><i>✦</i><span>Erza Scarlet</span><i>✦</i>
+        <span>Shadow</span><i>✦</i><span>Gojo Satoru</span><i>✦</i><span>Levi Ackerman</span><i>✦</i><span>Makima</span><i>✦</i><span>Sung Jin-Woo</span><i>✦</i><span>Rimuru Tempest</span><i>✦</i><span>Erza Scarlet</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- CATÁLOGO -->
+    <section class="section" id="catalogo">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow reveal"><span class="pulse-dot"></span>Catálogo activo</div>
+            <h2 class="section-title reveal">Elige a tu próxima <span class="grad-text">leyenda</span></h2>
+            <p class="section-sub reveal">Siete fichas seleccionadas por su poder, técnica y potencial estratégico. Filtra por rango y encuentra tu próxima incorporación.</p>
+          </div>
+          <div class="section-meta reveal">
+            <span class="live-tag"><span class="live-dot"></span>Stock en vivo</span>
+            <span class="meta-note">Actualizado hoy · 09:41</span>
+          </div>
+        </div>
+
+        <div class="toolbar reveal">
+          <div class="filters" role="group" aria-label="Filtrar por rango">
+            <button class="filter is-active" data-filter="all">Todos <span class="filter-count">7</span></button>
+            <button class="filter" data-filter="s+">S+ <span class="filter-count">4</span></button>
+            <button class="filter" data-filter="s">S <span class="filter-count">2</span></button>
+            <button class="filter" data-filter="a">A <span class="filter-count">1</span></button>
+          </div>
+          <div class="toolbar-right">
+            <label class="sort-wrap" for="sort">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 4v16m0 0-3-3m3 3 3-3M17 20V4m0 0-3 3m3-3 3 3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <select id="sort" aria-label="Ordenar personajes">
+                <option value="featured">Destacados</option>
+                <option value="level">Mayor nivel</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid" id="characterGrid">
+          <!-- Las tarjetas se generan con JS -->
+        </div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <p>No hay personajes con ese rango por ahora.</p>
+          <button class="btn btn-ghost" id="resetFilters">Ver todos</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RANGOS -->
+    <section class="section section-tinted" id="rangos">
+      <div class="container">
+        <div class="section-head center">
+          <div class="eyebrow reveal"><span class="pulse-dot"></span>Sistema de rangos</div>
+          <h2 class="section-title reveal">No todos los personajes <span class="grad-text">son iguales</span></h2>
+          <p class="section-sub reveal">Cada ficha se evalúa con cinco atributos y un nivel de combate del 1 al 100. El rango resume su impacto en cualquier escenario.</p>
+        </div>
+
+        <div class="tiers">
+          <article class="tier-card tier-splus reveal">
+            <div class="tier-head">
+              <span class="tier-badge">S+</span>
+              <span class="tier-count">4 personajes</span>
+            </div>
+            <h3>Singularidad</h3>
+            <p>Pueden cambiar el rumbo de una guerra por sí solos. Poder de escala continental o reglas que ignoran la lógica del combate.</p>
+            <ul>
+              <li>Nivel 97 – 100</li>
+              <li>Poder, magia y técnica al límite</li>
+              <li>Disponibilidad muy limitada</li>
+            </ul>
+          </article>
+
+          <article class="tier-card tier-s reveal">
+            <div class="tier-head">
+              <span class="tier-badge">S</span>
+              <span class="tier-count">2 personajes</span>
+            </div>
+            <h3>Élite</h3>
+            <p>Combatientes excepcionales con habilidades únicas. Dominan su especialidad y se adaptan a casi cualquier escenario.</p>
+            <ul>
+              <li>Nivel 90 – 96</li>
+              <li>Alta versatilidad táctica</li>
+              <li>Excelente relación poder / costo</li>
+            </ul>
+          </article>
+
+          <article class="tier-card tier-a reveal">
+            <div class="tier-head">
+              <span class="tier-badge">A</span>
+              <span class="tier-count">1 personaje</span>
+            </div>
+            <h3>Vanguardia</h3>
+            <p>Especialistas letales en su terreno. Su rendimiento depende del entorno, pero su techo de habilidad es altísimo.</p>
+            <ul>
+              <li>Nivel 80 – 89</li>
+              <li>Movilidad y precisión sobresalientes</li>
+              <li>Ideal para operaciones puntuales</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow reveal"><span class="pulse-dot"></span>Proceso</div>
+            <h2 class="section-title reveal">De la ficha al <span class="grad-text">equipo</span></h2>
+            <p class="section-sub reveal">Sin papeleo interminable. Tres pasos y tu colección empieza a tomar forma.</p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-num">01</span>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Explora y compara</h3>
+            <p>Filtra por rango, revisa atributos y lee la ficha completa de cada personaje antes de decidir.</p>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">02</span>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h10M4 17h7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="18" cy="16" r="3" stroke="currentColor" stroke-width="1.7"/></svg>
+            </div>
+            <h3>Reserva la ficha</h3>
+            <p>Elige a tu personaje y reserva con un clic. Recibirás su dossier completo y su carta de poder.</p>
+          </article>
+
+          <article class="step reveal">
+            <span class="step-num">03</span>
+            <div class="step-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3 4 6.5v5.7c0 4.8 3.3 8.2 8 9.8 4.7-1.6 8-5 8-9.8V6.5L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.6 12 2.4 2.4 4.4-4.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Añádelo a tu equipo</h3>
+            <p>Recibe el pack digital, personaliza su rol y desbloquea contenido extra de la temporada.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <div class="cta-glow" aria-hidden="true"></div>
+          <div class="cta-copy">
+            <div class="eyebrow"><span class="pulse-dot"></span>Colección privada</div>
+            <h2>¿Buscas un personaje que no está en el catálogo?</h2>
+            <p>Cuéntanos qué arquetipo necesitas y nuestro equipo lo rastrea por ti. Sin compromiso, sin ruido.</p>
+          </div>
+          <form class="cta-form" id="requestForm" novalidate>
+            <label class="sr-only" for="requestName">Tu nombre</label>
+            <input id="requestName" type="text" placeholder="Tu nombre" autocomplete="name" required>
+            <label class="sr-only" for="requestEmail">Tu correo</label>
+            <input id="requestEmail" type="email" placeholder="tu@correo.com" autocomplete="email" required>
+            <button class="btn btn-primary" type="submit">Solicitar búsqueda</button>
+            <p class="form-note">Demo: no se envía ningún dato a ningún servidor.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-intro">
+          <div class="eyebrow reveal"><span class="pulse-dot"></span>Dudas frecuentes</div>
+          <h2 class="section-title reveal">Antes de <span class="grad-text">reclutar</span></h2>
+          <p class="section-sub reveal">Todo lo que necesitas saber sobre las fichas, los rangos y la colección.</p>
+          <div class="faq-support reveal">
+            <p>¿Otra pregunta?</p>
+            <a href="mailto:hola@nexus.demo" class="link-arrow">Escríbenos <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="faq-list reveal">
+          <details class="faq-item" open>
+            <summary>¿Esto es una tienda real?</summary>
+            <div class="faq-body"><p>No. NEXUS es una landing page de demostración. Los precios, niveles y fichas son ficticios y no se vende ningún producto ni se procesan pagos.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cómo se calcula el nivel de un personaje?</summary>
+            <div class="faq-body"><p>El nivel resume cinco atributos: poder, velocidad, técnica, magia y resistencia. Es una escala editorial del 1 al 100 basada en el canon de cada obra, no una medida oficial.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo pedir un personaje que no aparezca?</summary>
+            <div class="faq-body"><p>Sí. Usa el formulario de búsqueda personalizada y cuéntanos qué arquetipo o personaje tienes en mente. En una tienda real, el equipo revisaría disponibilidad y te respondería en 24–48 h.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Los rangos S+, S y A son oficiales?</summary>
+            <div class="faq-body"><p>Son una clasificación propia de esta demo, pensada para comparar estilos de combate. Cada obra tiene su propia escala de poder, así que tómalo como una guía, no como un versus definitivo.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿De dónde salen las imágenes?</summary>
+            <div class="faq-body"><p>Son ilustraciones de los propios personajes, propiedad de sus autores y franquicias. Se muestran aquí únicamente con fines demostrativos: NEXUS no reclama su autoría ni vende los personajes.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#top" class="brand" aria-label="NEXUS, inicio">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none">
+                <path d="M20 3 34.7 11.5v17L20 37 5.3 28.5v-17L20 3Z" stroke="#8b5cf6" stroke-width="1.6"/>
+                <path d="M20 12l6.9 4v8l-6.9 4-6.9-4v-8l6.9-4Z" fill="#38e8ff"/>
+              </svg>
+            </span>
+            <span class="brand-name">NEXUS<span class="brand-dot">.</span></span>
+          </a>
+          <p>El catálogo de élite para quienes coleccionan leyendas. Ficción, poder y un poco de espectáculo.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <a href="#catalogo">Personajes</a>
+          <a href="#rangos">Rangos</a>
+          <a href="#como-funciona">Cómo funciona</a>
+        </div>
+        <div class="footer-col">
+          <h4>Compañía</h4>
+          <a href="#faq">Preguntas frecuentes</a>
+          <a href="#faq">Contacto</a>
+          <a href="#top">Sobre NEXUS</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="#faq">Términos</a>
+          <a href="#faq">Privacidad</a>
+          <a href="#faq">Cookies</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 NEXUS. Proyecto de demostración sin fines comerciales. Personajes, ilustraciones y franquicias pertenecen a sus respectivos autores.</p>
+        <div class="footer-badges">
+          <span class="footer-badge">Demo · Sin ventas reales</span>
+          <span class="footer-badge">Hecho con HTML, CSS y JS</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DE PERSONAJE -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalName" tabindex="-1">
+      <button class="modal-close" id="modalClose" aria-label="Cerrar ficha">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="modal-media">
+        <img id="modalImg" alt="">
+        <div class="modal-media-fade" aria-hidden="true"></div>
+        <div class="modal-media-bottom">
+          <span class="modal-quote" id="modalQuote"></span>
+        </div>
+      </div>
+      <div class="modal-content">
+        <div class="modal-tags" id="modalTags"></div>
+        <h2 id="modalName"></h2>
+        <p class="modal-series" id="modalSeries"></p>
+        <p class="modal-desc" id="modalDesc"></p>
+
+        <div class="modal-stats" id="modalStats"></div>
+
+        <h3 class="modal-subtitle">Habilidades</h3>
+        <ul class="power-list" id="modalPowers"></ul>
+
+        <div class="modal-footer">
+          <div class="modal-price">
+            <span>Precio de reclutamiento</span>
+            <strong id="modalPrice"></strong>
+            <small>USD · precio de demostración</small>
+          </div>
+          <button class="btn btn-primary" id="modalCta">Reclutar ahora</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon" aria-hidden="true">✓</span>
+    <span id="toastText">Reserva simulada</span>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
